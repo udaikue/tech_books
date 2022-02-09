@@ -1,2 +1,13 @@
-h1 Books#new
-p Find me in app/views/books/new.html.slim
+h1 New Book
+
+.nav.justify-content-end
+  = link_to 'list', books_path, class: 'nav-link'
+
+= form_with model: @book, local: true do |f|
+  .form-group
+    = f.label :title
+    = f.text_field :title, class: 'form-control'
+  .form-group
+    = f.label :memo
+    = f.text_area :memo, rows:5, class: 'form-control'
+  = f.submit nil, class: 'btn btn-primary'

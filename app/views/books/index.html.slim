@@ -1,2 +1,18 @@
-h1 Books#index
-p Find me in app/views/books/index.html.slim
+h1 Book List
+
+= link_to 'create', new_book_path, class: 'btn btn-primary'
+
+.mb-3
+table.table.table-hover
+  thead.thead-default
+    tr
+     th= 'Title'
+     th= 'Created at'
+     th
+  tbody
+    - @books.each do |book|
+      tr
+        td= link_to book.title, book_path(book)
+        td= book.created_at
+        td
+          = link_to 'edit', edit_book_path(book), class: 'btn btn-primary mr-3'

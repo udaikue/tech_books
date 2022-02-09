@@ -1,2 +1,6 @@
-h1 Books#new
-p Find me in app/views/books/new.html.slim
+h1 New Book
+
+.nav.justify-content-end
+  = link_to 'list', books_path, class: 'nav-link'
+
+= render partial: 'form', locals: { book: @book }

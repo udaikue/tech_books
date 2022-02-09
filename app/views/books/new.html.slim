@@ -3,14 +3,4 @@ h1 New Book
 .nav.justify-content-end
   = link_to 'list', books_path, class: 'nav-link'
 
-= form_with model: @book, local: true do |f|
-  .form-group
-    = f.label :title
-    = f.text_field :title, class: 'form-control'
-  .form-group
-    = f.label :memo
-    = f.text_area :memo, rows:5, class: 'form-control'
-  .form-group
-    = f.label :paper
-    = f.check_box :paper, {}, true, false
-  = f.submit nil, class: 'btn btn-primary'
+= render partial: 'form', locals: { book: @book }

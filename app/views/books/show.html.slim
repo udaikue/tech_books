@@ -1,2 +1,21 @@
-h1 Books#show
-p Find me in app/views/books/show.html.slim
+h1 Book Details
+
+.nav.justify-content-end
+  = link_to 'list', books_path, class: 'nav-link'
+table.table.table-hover
+  tbody
+    tr
+      th= 'Title'
+      td= @book.title
+    tr
+      th= 'Memo'
+      td= simple_format(h(@book.memo), {}, sanitize: false, wrapper_tag: "div")
+    tr
+      th= 'Digital or Paper'
+      td= @book.paper ? 'Paper' : 'Digital'
+    tr
+      th= 'Created at'
+      td= @book.created_at
+    tr
+      th= 'Updated at'
+      td= @book.updated_at

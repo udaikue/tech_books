@@ -8,5 +8,8 @@ html
     = csp_meta_tag
     = stylesheet_link_tag 'application', media: 'all'
     = javascript_pack_tag 'application'
+    .container
+      - if flash.notice.present?
+        .alert.alert-success= flash.notice
   body
     = yield

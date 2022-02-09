@@ -8,8 +8,11 @@ table.table.table-hover
     tr
      th= 'Title'
      th= 'Created at'
+     th
   tbody
     - @books.each do |book|
       tr
         td= link_to book.title, book_path(book)
         td= book.created_at
+        td
+          = link_to 'edit', edit_book_path(book), class: 'btn btn-primary mr-3'

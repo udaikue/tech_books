@@ -19,3 +19,5 @@ table.table.table-hover
     tr
       th= 'Updated at'
       td= @book.updated_at
+
+= link_to 'edit', edit_book_path, class: 'btn btn-primary mr-3'

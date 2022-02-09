@@ -28,6 +28,9 @@ class BooksController < ApplicationController
   end
 
   def destroy
+    book = Book.find(params[:id])
+    book.destroy
+    redirect_to books_path, notice: "#{book.title} has been successfully deleted٩( 'ω' )و"
   end
 
   private

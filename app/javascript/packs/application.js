@@ -10,4 +10,4 @@ import "channels"
 Rails.start()
 ActiveStorage.start()
 
-require('./hello_vue.js')
+require('../new_form.js')

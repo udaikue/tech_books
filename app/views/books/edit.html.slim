@@ -3,4 +3,4 @@ h1 Edit Book
 .nav.justify-content-end
   = link_to 'list', books_path, class: 'nav-link'
 
-= render partial: 'form', locals: { book: @book }
+#js-edit-form(data-book-id="#{@book.id}")

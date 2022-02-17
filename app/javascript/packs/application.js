@@ -9,3 +9,6 @@ import "channels"
 
 Rails.start()
 ActiveStorage.start()
+
+require('../new_form.js')
+require('../edit_form.js')
